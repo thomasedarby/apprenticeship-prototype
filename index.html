@@ -7,10 +7,93 @@
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <nav></nav>
+    <!-- Menu -->
+    <nav class="site-nav" aria-label="Primary">
+      <div class="nav-shell">
+        <a class="nav-logo" href="#" aria-label="Home">
+          <img src="images/DCC-Footer-Logo.svg" alt="DCC logo" />
+        </a>
 
-    <main></main>
+        <a class="nav-title" href="#">Report a problem</a>
 
+        <ul class="nav-links" id="primary-navigation">
+          <li><a href="#">Report a problem</a></li>
+          <li><a href="#">Track a report</a></li>
+          <li><a href="#">Help and guidance</a></li>
+        </ul>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Open menu"
+        >
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </button>
+      </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <button
+        class="mobile-menu-backdrop"
+        type="button"
+        aria-label="Close menu"
+      ></button>
+      <div
+        class="mobile-menu-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Menu"
+      >
+        <ul>
+          <li><a href="#">Report a problem</a></li>
+          <li><a href="#">Track a report</a></li>
+          <li><a href="#">Help and guidance</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- End Of Menu -->
+
+    <!-- Start Of content -->
+    <main>
+      <div class="intro">
+        <h1>Report a problem in your area</h1>
+        <p>
+          Tell us about problems like potholes, fly-tipping, and broken
+          streetlights. We'll get them fixed
+        </p>
+      </div>
+
+      <div class="cta report">
+        <a href="#" class="button">Report a problem</a>
+        <p>This takes about two minutes</p>
+      </div>
+
+      <div class="cta track">
+        <a href="#" class="button">Track a report</a>
+        <p>See the status of your report</p>
+      </div>
+
+      <div class="information">
+        <h2>What you can report</h2>
+        <p>
+          You can report problems like potholes, fly-tipping, and broken
+          streetlights. We'll get them fixed.
+        </p>
+        <ul>
+          <li>Potholes</li>
+          <li>Fly-tipping</li>
+          <li>Broken streetlights</li>
+          <li>Graffiti</li>
+          <li>Blocked drains</li>
+        </ul>
+      </div>
+    </main>
+
+    <footer></footer>
     <script src="script.js"></script>
   </body>
 </html>
