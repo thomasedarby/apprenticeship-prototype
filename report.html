@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wireframing Prototype</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <!-- Menu -->
+    <nav class="site-nav" aria-label="Primary">
+      <div class="nav-shell">
+        <a class="nav-logo" href="#" aria-label="Home">
+          <img src="images/DCC-Footer-Logo.svg" alt="DCC logo" />
+        </a>
+
+        <a class="nav-title" href="#">Report a problem</a>
+
+        <ul class="nav-links" id="primary-navigation">
+          <li><a href="report.html">Report a problem</a></li>
+          <li><a href="#">Track a report</a></li>
+          <li><a href="#">Help and guidance</a></li>
+        </ul>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Open menu"
+        >
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </button>
+      </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <button
+        class="mobile-menu-backdrop"
+        type="button"
+        aria-label="Close menu"
+      ></button>
+      <div
+        class="mobile-menu-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Menu"
+      >
+        <ul>
+          <li><a href="report.html">Report a problem</a></li>
+          <li><a href="#">Track a report</a></li>
+          <li><a href="#">Help and guidance</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- End Of Menu -->
+
+    <main>
+      <section class="report-form-wrapper" aria-labelledby="report-form-title">
+        <h1 id="report-form-title">Report a Problem</h1>
+
+        <div class="report-progress" aria-label="Progress">
+          <h2>Progress</h2>
+          <div class="progress-segments" role="list" aria-label="Form steps">
+            <span class="progress-segment" role="listitem"></span>
+            <span class="progress-segment" role="listitem"></span>
+            <span class="progress-segment" role="listitem"></span>
+            <span class="progress-segment" role="listitem"></span>
+          </div>
+        </div>
+
+        <form class="multi-step-form" novalidate>
+          <!-- Step 1: What are you reporting -->
+          <fieldset class="form-step" data-step="0">
+            <legend>What are you reporting?</legend>
+            <label for="report-type">Select the type of problem</label>
+            <select id="report-type" name="report-type">
+              <option value="">Please select…</option>
+              <option value="pothole">Pothole</option>
+              <option value="fly-tipping">Fly-tipping</option>
+              <option value="graffiti">Graffiti</option>
+              <option value="street-light">Broken street light</option>
+            </select>
+          </fieldset>
+
+          <!-- Step 2: Where is the problem -->
+          <fieldset class="form-step" data-step="1" hidden>
+            <legend>Where is the problem?</legend>
+            <div class="location-options">
+              <label class="location-option">
+                <input
+                  type="radio"
+                  name="location-method"
+                  value="current"
+                  checked
+                />
+                <span>Use my current location</span>
+              </label>
+              <div class="location-detected" aria-live="polite">
+                <span class="location-icon" aria-hidden="true">📍</span>
+                <span>14 Ashbourne Road, Derby, DE22 3AD</span>
+              </div>
+              <label class="location-option">
+                <input type="radio" name="location-method" value="manual" />
+                <span>Enter the address myself</span>
+              </label>
+              <div class="location-manual-fields" aria-hidden="true">
+                <label for="manual-address">Address</label>
+                <input
+                  id="manual-address"
+                  name="manual-address"
+                  type="text"
+                  placeholder="Street address"
+                />
+                <label for="manual-postcode">Postcode</label>
+                <input
+                  id="manual-postcode"
+                  name="manual-postcode"
+                  type="text"
+                  placeholder="e.g. DE1 2AB"
+                />
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Step 3: Tell us more -->
+          <fieldset class="form-step" data-step="2" hidden>
+            <legend>Tell us more about the problem</legend>
+            <label for="photo-upload">Upload a photo (optional)</label>
+            <div class="file-upload-area">
+              <input
+                id="photo-upload"
+                name="photo-upload"
+                type="file"
+                accept="image/*"
+                class="file-input"
+              />
+              <label for="photo-upload" class="file-upload-label">
+                <span class="file-upload-icon" aria-hidden="true">📷</span>
+                <span>Choose a photo or drag it here</span>
+              </label>
+            </div>
+            <label for="more-info"
+              >More information
+              <span class="optional-label">(optional)</span></label
+            >
+            <textarea
+              id="more-info"
+              name="more-info"
+              rows="4"
+              placeholder="Describe what you can see…"
+            ></textarea>
+          </fieldset>
+
+          <!-- Step 4: Updates preference -->
+          <fieldset class="form-step" data-step="3" hidden>
+            <legend>Do you want updates about your report?</legend>
+            <div class="checkbox-group">
+              <label class="checkbox-option">
+                <input type="checkbox" name="updates" value="email" />
+                <span>Email updates</span>
+              </label>
+              <label class="checkbox-option">
+                <input type="checkbox" name="updates" value="sms" />
+                <span>Text message updates</span>
+              </label>
+              <label class="checkbox-option">
+                <input type="checkbox" name="updates" value="none" />
+                <span>No updates needed</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="form-actions">
+            <button
+              type="button"
+              class="form-button form-button-secondary"
+              id="back-step"
+            >
+              Back
+            </button>
+            <button
+              type="button"
+              class="form-button form-button-primary"
+              id="next-step"
+            >
+              Next
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-top">
+        <div class="footer-logo">
+          <a class="footer-logo-logo" href="#" aria-label="Home">
+            <img src="images/DCC-Footer-Logo.svg" alt="DCC logo" />
+          </a>
+        </div>
+        <div class="useful-links">
+          <h3>Useful Links</h3>
+          <ul>
+            <li>Click me</li>
+            <li>Click me</li>
+            <li>Click me</li>
+          </ul>
+          <ul>
+            <li>Click me</li>
+            <li>Click me</li>
+            <li>Click me</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="copyright">© Derbyshire county council</div>
+        <div class="contact">
+          <ul>
+            <li>Phone</li>
+            <li>email</li>
+            <li>opening times</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

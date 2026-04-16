@@ -3,25 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wireframing Prototype</title>
+    <title>Report Submitted – DCC</title>
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <!-- Menu -->
+    <!-- Nav -->
     <nav class="site-nav" aria-label="Primary">
       <div class="nav-shell">
-        <a class="nav-logo" href="#" aria-label="Home">
+        <a class="nav-logo" href="index.html" aria-label="Home">
           <img src="images/DCC-Footer-Logo.svg" alt="DCC logo" />
         </a>
-
-        <a class="nav-title" href="#">Report a problem</a>
-
+        <a class="nav-title" href="index.html">Report a problem</a>
         <ul class="nav-links" id="primary-navigation">
           <li><a href="report.html">Report a problem</a></li>
           <li><a href="#">Track a report</a></li>
           <li><a href="#">Help and guidance</a></li>
         </ul>
-
         <button
           class="nav-toggle"
           type="button"
@@ -55,41 +52,60 @@
         </ul>
       </div>
     </div>
-    <!-- End Of Menu -->
+    <!-- End Nav -->
 
-    <!-- Start Of content -->
     <main>
-      <div class="intro">
-        <h1>Report a problem in your area</h1>
-        <p>
-          Tell us about problems like potholes, fly-tipping, and broken
-          streetlights. We'll get them fixed
+      <div class="success-wrapper">
+        <!-- Confirmation banner -->
+        <div class="success-banner" role="status" aria-live="polite">
+          <span class="success-tick" aria-hidden="true">&#10003;</span>
+          <h1>Report submitted</h1>
+        </div>
+
+        <!-- Reference number -->
+        <div class="success-card">
+          <p class="success-ref-label">Your reference number</p>
+          <div
+            class="success-ref-number"
+            aria-label="Reference number REF-2604-1234"
+          >
+            REF-2604-1234
+          </div>
+          <!-- Important notice -->
+          <div class="success-card success-important">
+            <h3>Important</h3>
+            <p>
+              Write down your reference number or take a screenshot. You'll need
+              it to check your report. You don't need to create an account.
+            </p>
+          </div>
+        </div>
+
+        <!-- What happens next -->
+        <div class="success-card">
+          <h2>What happens next</h2>
+          <ol class="success-steps">
+            <li>We'll look at your report within 2 working days</li>
+            <li>Our team will check the problem and plan when to fix it</li>
+            <li>You can check progress any time using your reference number</li>
+          </ol>
+        </div>
+
+        <!-- Action buttons -->
+        <div class="success-actions">
+          <a href="#" class="success-action-btn success-action-primary"
+            >Check report status</a
+          >
+          <a href="report.html" class="success-action-btn"
+            >Report another problem</a
+          >
+          <a href="index.html" class="success-action-btn">Go to home page</a>
+        </div>
+
+        <!-- Thank you -->
+        <p class="success-thankyou">
+          Thank you for helping us keep your area safe and clean
         </p>
-      </div>
-
-      <div class="cta report">
-        <a href="report.html" class="button">Report a problem</a>
-        <p class="subtext">This takes about two minutes</p>
-      </div>
-
-      <div class="cta track">
-        <a href="#" class="button">Track a report</a>
-        <p class="subtext">See the status of your report</p>
-      </div>
-
-      <div class="information">
-        <h2>What you can report</h2>
-        <p>
-          You can report problems like potholes, fly-tipping, and broken
-          streetlights. We'll get them fixed.
-        </p>
-        <ul>
-          <li>Potholes</li>
-          <li>Fly-tipping</li>
-          <li>Broken streetlights</li>
-          <li>Graffiti</li>
-          <li>Blocked drains</li>
-        </ul>
       </div>
     </main>
 
@@ -114,7 +130,6 @@
           </ul>
         </div>
       </div>
-
       <div class="footer-bottom">
         <div class="copyright">© Derbyshire county council</div>
         <div class="contact">
@@ -126,6 +141,7 @@
         </div>
       </div>
     </footer>
+
     <script src="script.js"></script>
   </body>
 </html>
